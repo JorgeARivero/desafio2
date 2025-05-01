@@ -1,0 +1,30 @@
+from desafio2_funcionesjugadores import cargar_matriz, mostrar_matriz, modificar_matriz
+
+def main():
+    matriz = []
+    while True:
+        print("Menú:")
+        print("1. Pedir datos para cargar la matriz")
+        print("2. Mostrar matriz")
+        print("3. Modificar matriz")
+        print("4. Salir")
+        opcion = input("Ingrese su opción: ")
+        if opcion == "1":
+            matriz = cargar_matriz()
+        elif opcion == "2":
+            if matriz:
+                mostrar_matriz(matriz)
+            else:
+                print("La matriz no ha sido cargada")
+        elif opcion == "3":
+            if matriz:
+                matriz = modificar_matriz(matriz)
+            else:
+                print("La matriz no ha sido cargada")
+        elif opcion == "4":
+            break
+        else:
+            print("Opción inválida")
+            
+if __name__ == "__main__":
+    main()
