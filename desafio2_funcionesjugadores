@@ -1,0 +1,35 @@
+def cargar_matriz():
+    matriz = [[0 for _ in range(4)] for _ in range(11)]
+    for i in range(11):
+        print(f"Ingrese los datos del jugador {i+1}:")
+        matriz[i][0] = input("Nombre: ")
+        matriz[i][1] = input("Apellido: ")
+        matriz[i][2] = input("Posición: ")
+        matriz[i][3] = int(input("Cantidad de goles: "))
+    return matriz
+
+def mostrar_matriz(matriz):
+    print("Matriz de jugadores:")
+    for i in range(11):
+        print(f"Jugador {i+1}:")
+        print(f"Nombre: {matriz[i][0]}")
+        print(f"Apellido: {matriz[i][1]}")
+        print(f"Posición: {matriz[i][2]}")
+        print(f"Goles: {matriz[i][3]}")
+        print()
+
+def modificar_matriz(matriz):
+    mostrar_matriz(matriz)
+    fila = int(input("Ingrese la fila del jugador a modificar (1-11): ")) - 1
+    columna = int(input("Ingrese la columna a modificar (1-4): ")) - 1
+    if columna == 0:
+        matriz[fila][columna] = input("Ingrese el nuevo nombre: ")
+    elif columna == 1:
+        matriz[fila][columna] = input("Ingrese el nuevo apellido: ")
+    elif columna == 2:
+        matriz[fila][columna] = input("Ingrese la nueva posición: ")
+    elif columna == 3:
+        matriz[fila][columna] = int(input("Ingrese la nueva cantidad de goles: "))
+    print("Matriz modificada:")
+    mostrar_matriz(matriz)
+    return matriz
